@@ -12,7 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - docker image build -t $ECR_REPO:$TAG --build-arg TESSCO_BASE_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/tessco-common/python:3.8.5 .
+      - docker image build -t $ECR_REPO:$TAG --build-arg TESSCO_BASE_IMAGE=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/tessco-common/python:3.8 .
       - docker tag $ECR_REPO:$TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$ECR_REPO
   post_build:
     commands:
